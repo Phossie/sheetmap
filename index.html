@@ -120,8 +120,11 @@
           delimiter: ','
         }, function (err, data) {
           map.on('load', function () {
+
+            var featuresData = data.features;
+            const testNavn = "TestNavn";
             
-            console.log(data, 'data')
+            console.log(featuresData, 'data')
             
           //  var descriptionName = e.features[0].properties.Name;
 
@@ -136,7 +139,7 @@
               },
               'layout': {
                 // get the title name from the source's "title" property
-                'text-field': ['get', features.properties.Name],
+                'text-field': ['get', testNavn],
                 'text-font': [
                 'Open Sans Semibold',
                 'Arial Unicode MS Bold'
