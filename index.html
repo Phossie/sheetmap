@@ -120,11 +120,15 @@
           delimiter: ','
         }, function (err, data) {
           map.on('load', function () {
-            var descriptionName = e.features[0].properties.Name;
+            
+            console.log(data, 'data')
+            console.log(csvData, 'data')
+            
+          //  var descriptionName = e.features[0].properties.Name;
 
 
             //Add the the layer to the map
-            map.addLayer({
+          /*  map.addLayer({
               'id': 'csvData',
               'type': 'circle',
               'source': {
@@ -145,7 +149,7 @@
                 'circle-radius': 6,
                 'circle-color': "black"
               }
-            });
+            });*/
 
             map.addLayer({
               'id': 'csvData',
@@ -156,7 +160,7 @@
               },
               'layout': {
                 // get the title name from the source's "name" property
-                'text-field': ['get', descriptionName],
+                'text-field': ['get', 'descriptionName'],
                 'text-font': [
                   'Open Sans Semibold',
                   'Arial Unicode MS Bold'
