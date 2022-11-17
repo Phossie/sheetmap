@@ -132,19 +132,11 @@
               'paint': {
                 'circle-radius': 6,
                 'circle-color': "black"
-              }
-            });
-
-            map.addLayer({
-              'id': 'csvData',
-              'type': 'circle',
-              'source': {
-                'type': 'geojson',
-                'data': data
               },
+
               'layout': {
                 // get the title name from the source's "name" property
-                'text-field': ['get', 'name'],
+                'text-field': ['get', 'Name'],
                 'text-font': [
                   'Open Sans Semibold',
                   'Arial Unicode MS Bold'
@@ -153,6 +145,8 @@
                 'text-anchor': 'top'
               }
             });
+            
+          });
 
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
