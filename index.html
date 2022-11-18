@@ -10,7 +10,6 @@
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
   <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
   <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
   <style>
     body {
       margin: 0;
@@ -121,13 +120,6 @@
         }, function (err, data) {
           map.on('load', function () {
 
-            const testNavn = "TestNavn";
-            
-            console.log(data, 'data')
-            
-          //  var descriptionName = e.features[0].properties.Name;
-
-
             //Add the the layer to the map
             map.addLayer({
               'id': 'csvData',
@@ -135,42 +127,12 @@
               'source': {
                 'type': 'geojson',
                 'data': data
-              )}
               },
-              'layout': {
-                // get the title name from the source's "title" property
-                'text-field': ['get', testNavn],
-                'text-font': [
-                'Open Sans Semibold',
-                'Arial Unicode MS Bold'
-                ],
-                'text-offset': [0, 1.25],
-                'text-anchor': 'top'
-                }
               'paint': {
                 'circle-radius': 6,
                 'circle-color': "black"
               }
             });
-/*
-            // map.addLayer({
-              'id': 'csvData',
-              'type': 'circle',
-              'source': {
-                'type': 'geojson',
-                'data': data
-              },
-              'layout': {
-                // get the title name from the source's "name" property
-                'text-field': ['get', features.properties.Name],
-                'text-font': [
-                  'Open Sans Semibold',
-                  'Arial Unicode MS Bold'
-                ],
-                'text-offset': [0, 1.25],
-                'text-anchor': 'top'
-              }
-            // });*/
 
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
