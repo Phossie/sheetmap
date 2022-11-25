@@ -118,22 +118,33 @@
           lonfield: 'Longitude',
           delimiter: ','
         }, function (err, data) {
+          map.on('load', () => {
+            // Load an image from an external URL.
+            map.loadImage(
+              'https://docs.mapbox.com/mapbox-gl-js/assets/cat.png',
+              (error, image) => {
+                if (error) throw error;
+ 
+                // Add the image to the map style.
+                map.addImage('cat', image);
+
           map.on('load', function () {
 
             //Add the the layer to the map
             map.addLayer({
               'id': 'csvData',
-              'type': 'circle',
+              'type': 'symbol',
               'source': {
                 'type': 'geojson',
                 'data': data
               },
-              'paint': {
-                'circle-radius': 4,
-                'circle-color': "white",
-                'circle-stroke-color': "black",
-                'circle-stroke-width': 1
+                'layout': {
+                  'icon-image': 'cat', // reference the image
+                  'icon-size': 0.25
               }
+            },
+            'road-label-simple' // Add layer below labels
+            );
             });
 
 
