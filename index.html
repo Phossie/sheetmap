@@ -180,7 +180,10 @@
       };
     });
 
-
+const map = new mapboxgl.Map({attributionControl: false})
+.addControl(new mapboxgl.AttributionControl({
+customAttribution: 'Map design by Holm Hammershøj'
+}));
 
 
   </script>
