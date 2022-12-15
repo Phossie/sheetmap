@@ -175,15 +175,17 @@
             map.fitBounds(bbox, { padding: 50 });
 
           });
+          
+          const map = new mapboxgl.Map({attributionControl: false})
+.addControl(new mapboxgl.AttributionControl({
+customAttribution: 'Map design by me'
+}));
 
         });
       };
     });
 
-const map = new mapboxgl.Map({attributionControl: false})
-.addControl(new mapboxgl.AttributionControl({
-customAttribution: 'Map design by Holm Hammershøj'
-}));
+
 
 
   </script>
