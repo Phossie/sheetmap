@@ -93,13 +93,13 @@
     //YOUR TURN: add your Mapbox token
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiaG9sbS1oIiwiYSI6ImNrZzZmOHg5ajEzenUycW16ZzJma2ZtZjAifQ.rvQ9FAsNyzQUFYxBwXIsXA'; //Mapbox token
-    var map = new mapboxgl.Map({attributionControl: true})
-    .addControl(new mapboxgl.AttributionControl({
-    customAttribution: 'Map design by me'
+    var map = new mapboxgl.Map({attributionControl: false})
       container: 'map', // container id
       style: 'mapbox://styles/holm-h/ckhepdodv0w8d19kvz7iy34ah', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
       center: [11.656, 55.916], // starting position [lng, lat]
       zoom: 11,// starting zoom
+      .addControl(new mapboxgl.AttributionControl({
+    customAttribution: 'Map design by me'
       transformRequest: transformRequest
     });
 
