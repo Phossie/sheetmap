@@ -100,12 +100,13 @@
       style: 'mapbox://styles/holm-h/ckhepdodv0w8d19kvz7iy34ah', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
       center: [11.656, 55.916], // starting position [lng, lat]
       zoom: 11,// starting zoom
-      map.addControl(new mapboxgl.AttributionControl({
-customAttribution: 'Fozzis zyge map!'
-}));
 transformRequest: transformRequest
     });
 
+          map.addControl(new mapboxgl.AttributionControl({
+customAttribution: 'Fozzis zyge map!'
+}));
+    
     $(document).ready(function () {
       $.ajax({
         type: "GET",
